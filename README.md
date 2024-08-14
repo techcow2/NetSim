@@ -174,7 +174,7 @@ All data within NetSim, including your simulations, bookmarks, and history, is s
 
 - **Fix the revision history feature:** Improve the functionality to properly track and manage different versions of simulations.
 - **Provide different examples using other models:** Create and document simulations generated using various AI models to showcase the capabilities of each model.
-- **Add a public showcase for recently published apps.
+- Add a public showcase for recently published apps.
 
 ## 🤝 **Contributing**
 
