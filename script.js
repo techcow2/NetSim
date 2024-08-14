@@ -26,17 +26,17 @@ function checkRateLimit(action, limit, timeFrame) {
     const actionKey = `rateLimit_${action}`;
     const storedData = JSON.parse(sessionStorage.getItem(actionKey) || '[]');
     
-    // Remove old timestamps
+    
     const validData = storedData.filter(timestamp => now - timestamp < timeFrame);
     
     if (validData.length >= limit) {
-        return false; // Rate limit exceeded
+        return false; 
     }
     
-    // Add current timestamp and save
+    
     validData.push(now);
     sessionStorage.setItem(actionKey, JSON.stringify(validData));
-    return true; // Request allowed
+    return true; 
 }
 function clearInputAndSetPlaceholder() {
     document.getElementById('addressbar').value = '';
@@ -77,12 +77,12 @@ function initializeApp() {
         window.open(url, '_blank');
     }
 
-    // Load history from LocalData
+   
     ldb.get('netsim_history', function(value) {
         history = JSON.parse(LZString.decompressFromUTF16(value) || '[]');
     });
 
-    // Add event listener for right-click on the simulation frame
+   
     const frame = document.getElementById('simulation-frame');
     if (frame && frame.contentDocument) {
         frame.contentDocument.addEventListener('contextmenu', handleRightClick);
@@ -153,7 +153,7 @@ async function handleAddressBarSubmit() {
 }
 
 async function loadPage(input) {
-    if (!checkRateLimit('loadPage', 10, 60000)) { // 10 requests per minute
+    if (!checkRateLimit('loadPage', 10, 60000)) { 
         alert("You've made too many requests. Please wait a moment before trying again.");
         return;
     }
@@ -240,10 +240,10 @@ Remember to generate all necessary code to create a complete, working simulation
             clearInputAndSetPlaceholder();
             isEditMode = true;
 
-            // Save history to LocalData
+            
             ldb.set('netsim_history', LZString.compressToUTF16(JSON.stringify(history)));
 
-            // Add event listener for right-click on the simulation frame
+            
             frame.contentDocument.addEventListener('contextmenu', handleRightClick);
             frame.contentDocument.addEventListener('click', handleLeftClick);
         };
@@ -256,7 +256,7 @@ Remember to generate all necessary code to create a complete, working simulation
 }
 
 async function continueSimulation(additionalInput) {
-    if (!checkRateLimit('continueSimulation', 10, 60000)) { // 10 requests per minute
+    if (!checkRateLimit('continueSimulation', 10, 60000)) {
         alert("You've made too many requests. Please wait a moment before trying again.");
         return;
     }
@@ -475,7 +475,7 @@ function goHome() {
         </div>
     `;
 
-    // Add Animate.css for animations
+    
     const animateCss = document.createElement('link');
     animateCss.rel = 'stylesheet';
     animateCss.href = 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css';
@@ -491,7 +491,7 @@ function goHome() {
     hidePublishButton();
     isEditMode = false;
 
-    // Save history to LocalData
+   
     ldb.set('netsim_history', LZString.compressToUTF16(JSON.stringify(history)));
 }
 function downloadSimulation() {
@@ -584,7 +584,7 @@ function loadBookmark(index) {
             clearInputAndSetPlaceholder();
             showPublishButton();
 
-            // Add event listener for right-click on the simulation frame
+           
             frame.contentDocument.addEventListener('contextmenu', handleRightClick);
             frame.contentDocument.addEventListener('click', handleLeftClick);
         }
@@ -629,22 +629,22 @@ async function saveRevision(prompt) {
 
     try {
         const frame = document.getElementById('simulation-frame');
-        await new Promise(resolve => setTimeout(resolve, 1000)); // Wait for the iframe to fully load
+        await new Promise(resolve => setTimeout(resolve, 1000)); 
         const screenshot = await html2canvas(frame.contentDocument.body);
         const screenshotUrl = screenshot.toDataURL();
         
         ldb.get(`netsim_revisions_${currentProjectId}`, function(value) {
             let revisions = JSON.parse(LZString.decompressFromUTF16(value) || '[]');
             
-            // Limit the number of revisions to 10
+            
             if (revisions.length >= 10) {
                 revisions.pop();
             }
 
-            // Use lastUserInput if it's available, otherwise use the full prompt
+           
             const revisionPrompt = lastUserInput || prompt;
 
-            // Store only essential data
+            
             revisions.unshift({
                 prompt: revisionPrompt,
                 screenshot: screenshotUrl,
@@ -653,7 +653,7 @@ async function saveRevision(prompt) {
 
             ldb.set(`netsim_revisions_${currentProjectId}`, LZString.compressToUTF16(JSON.stringify(revisions)));
 
-            // Reset lastUserInput after saving the revision
+            
             lastUserInput = '';
         });
     } catch (error) {
@@ -719,7 +719,7 @@ function toggleModelOptions() {
     const modelOptions = document.getElementById('model-options');
     if (modelOptions.style.display === 'none' || modelOptions.style.display === '') {
         modelOptions.style.display = 'block';
-        // Ensure the options are visible on mobile
+        
         if (window.innerWidth <= 1024) {
             const toolbar = document.getElementById('toolbar');
             toolbar.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -749,7 +749,7 @@ function updateModelSelection() {
 }
 
 async function publishSimulation() {
-    if (!checkRateLimit('publishSimulation', 5, 300000)) { // 5 requests per 5 minutes
+    if (!checkRateLimit('publishSimulation', 5, 300000)) {
         alert("You've published too many simulations recently. Please wait a few minutes before trying again.");
         return;
     }
@@ -760,10 +760,10 @@ async function publishSimulation() {
     }
 
     try {
-        // Create a Blob with the current simulation content
+        
         const blob = new Blob([currentSimulation], {type: "text/html"});
         
-        // Create a FormData object to send the file
+        
         const formData = new FormData();
         formData.append('file', blob, 'simulation.html');
         const response = await axios.post('api_proxy.php', formData, {
@@ -796,7 +796,7 @@ function hidePublishButton() {
 }
 
 async function improvePrompt() {
-    if (!checkRateLimit('improvePrompt', 5, 60000)) { // 5 requests per minute
+    if (!checkRateLimit('improvePrompt', 5, 60000)) {
         alert("You've made too many requests. Please wait a moment before trying again.");
         return;
     }
@@ -952,7 +952,7 @@ function updateElement() {
 
     const uniqueIdentifier = generateUniqueIdentifier(currentEditElement);
 
-    // Store the user's input for the revision history
+    
     lastUserInput = `Edit ${elementType}: ${updateInstructions}`;
 
     continueSimulation(`Update the ${elementType} with the following unique identifier: ${uniqueIdentifier}. Apply these changes: ${updateInstructions}`);
@@ -986,18 +986,18 @@ function handleLeftClick(event) {
 window.onload = function() {
     initializeApp();
 
-    // Remove functionality from close and minimize buttons
+   
     document.getElementById('close-button').onclick = function(e) {
-        e.preventDefault(); // Prevent any default action
-        // Do nothing
+        e.preventDefault(); 
+        
     };
 
     document.getElementById('minimize-button').onclick = function(e) {
-        e.preventDefault(); // Prevent any default action
-        // Do nothing
+        e.preventDefault(); 
+        
     };
 
-    // Keep maximize button functionality
+    
     document.getElementById('maximize-button').onclick = function() {
         if (document.getElementById('browser').style.width === '100%') {
             document.getElementById('browser').style.width = '90%';
