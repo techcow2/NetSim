@@ -202,5 +202,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 Special thanks to the following contributors:
 
 - **u/peeDDemon_au** for providing the Dockerfile for this project.
-
-This addition encourages community engagement and directs users to the appropriate subreddit for sharing and discussing their NetSim projects. Let me know if you need any more changes!
