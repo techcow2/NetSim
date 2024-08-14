@@ -47,24 +47,46 @@ To run this project locally, you will need:
 
    The project requires API keys to interact with the OpenRouter API and Pixabay. To configure the script with your API keys:
 
-   - Open the `api_proxy.php` file.
-   - Replace the placeholder values `YOUR_OPENROUTER_API_KEY` with your actual API keys in the following lines:
-     - `$openrouter_api_key2 = 'YOUR_OPENROUTER_API_KEY';`
-     - `$openrouter_api_key = 'YOUR_OPENROUTER_API_KEY';`
-
+   - **Open the `api_proxy.php` file:**
+     - Replace the placeholder values `YOUR_OPENROUTER_API_KEY` with your actual API keys in the following lines:
+       - `$openrouter_api_key2 = 'YOUR_OPENROUTER_API_KEY';`
+       - `$openrouter_api_key = 'YOUR_OPENROUTER_API_KEY';`
+     
      Example:
      ```php
      $openrouter_api_key2 = 'your-actual-api-key-1';
      $openrouter_api_key = 'your-actual-api-key-2';
      ```
 
-   - Open the `script.js` file.
-   - Replace the placeholder `'YOUR_PIXABAY_API_KEY'` in the `fetchPixabayImages` function with your actual Pixabay API key:
+   - **Open the `script.js` file:**
+     - Replace the placeholder `'YOUR_PIXABAY_API_KEY'` in the `fetchPixabayImages` function with your actual Pixabay API key:
 
      Example:
      ```javascript
      const apiKey = 'your-actual-api-key';
      ```
+
+   - **Optional: Change the Website URL for Publishing:**
+     - If you need to change the base URL used for publishing simulations:
+       - In the `api_proxy.php` file, locate the following lines:
+         
+         ```php
+         'HTTP-Referer: https://YOUR_WEBSITE_HERE.com',
+         ...
+         $baseUrl = 'https://YOUR_WEBSITE_HERE.com';
+         ```
+
+       - Replace `YOUR_WEBSITE_HERE` with your actual domain:
+
+       Example:
+       ```php
+       'HTTP-Referer: https://example.com',
+       ...
+       $baseUrl = 'https://example.com';
+       ```
+
+   - **Save the Files:**
+     - Save the changes to your `api_proxy.php` and `script.js` files.
 
 3. **Set Up a Local Server:**
 
@@ -130,32 +152,3 @@ Contributions are welcome! If you have suggestions for new features or improveme
 ## 📄 **License**
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## 🌐 **Optional Instructions to Change the Website URL for Publishing**
-
-If you need to change the base URL used for publishing simulations, follow these steps:
-
-1. **Open the `api_proxy.php` file:**
-   
-   - Locate the following sections in the script:
-
-     ```php
-     'HTTP-Referer: https://YOUR_WEBSITE_HERE.com',
-     ...
-     $baseUrl = 'https://YOUR_WEBSITE_HERE.com';
-     ```
-
-2. **Replace `YOUR_WEBSITE_HERE` with your actual domain:**
-   
-   Example:
-   ```php
-   'HTTP-Referer: https://example.com',
-   ...
-   $baseUrl = 'https://example.com';
-   ```
-
-3. **Save the File:**
-
-   - Save the changes to your `api_proxy.php` file.
-
-This change will make sure that the published simulations are linked to your specified domain.
