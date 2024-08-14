@@ -1,5 +1,3 @@
-Here's the updated README with the requested changes:
-
 # 🎱 **NetSim - AI Powered Simulations**
 
 ## Overview
@@ -160,4 +158,4 @@ If you need to change the base URL used for publishing simulations, follow these
 
    - Save the changes to your `api_proxy.php` file.
 
-This change will ensure that the published simulations are linked to your specified domain.
+This change will make sure that the published simulations are linked to your specified domain.
