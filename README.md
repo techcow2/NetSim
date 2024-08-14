@@ -40,6 +40,8 @@ To run this project locally, you will need:
 
 ### Installation
 
+#### Option 1: Manual Installation
+
 1. **Clone the Repository:**
 
    Clone the repository to your local machine using Git:
@@ -108,6 +110,28 @@ To run this project locally, you will need:
 
    Open your web browser and navigate to `http://localhost:8000` (or the appropriate URL if using a different server setup) to start using NetSim.
 
+#### Option 2: Docker Installation
+
+1. **Build the Docker Image:**
+
+   Navigate to the project directory and build the Docker image:
+
+   ```bash
+   docker build -t netsim .
+   ```
+
+2. **Run the Docker Container:**
+
+   Run the Docker container with the necessary environment variables for the API keys:
+
+   ```bash
+   docker run -d -p 8088:80 -e OPENROUTER_API_KEY_1=your-actual-api-key-1 -e OPENROUTER_API_KEY_2=your-actual-api-key-2 -e PIXABAY_API_KEY=your-actual-api-key netsim
+   ```
+
+3. **Access NetSim:**
+
+   Open your web browser and navigate to `http://localhost:8088` to start using NetSim.
+
 ## 🔧 **Usage**
 
 1. **Creating Simulations:**
@@ -155,6 +179,12 @@ All data within NetSim, including your simulations, bookmarks, and history, is s
 
 Contributions are welcome! If you have suggestions for new features or improvements, feel free to submit a pull request or open an issue.
 
+## 🙏 **Credits**
+
+Special thanks to the following contributors:
+
+- **u/peeDDemon_au** for providing the Dockerfile for this project.
+
 ## ☕ **Support This Project**
 
 If you find NetSim helpful and would like to support its development, consider buying me a coffee!
@@ -164,7 +194,6 @@ If you find NetSim helpful and would like to support its development, consider b
         <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" alt="Buy Me A Coffee" width="200" />
     </a>
 </p>
-
 
 ## 📄 **License**
 
