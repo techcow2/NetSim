@@ -100,7 +100,6 @@ All data within NetSim, including your simulations, bookmarks, and history, is s
 ## 🔒 **Security Considerations**
 
 - **🔑 Protecting API Keys:**
-  - Avoid hardcoding API keys directly into the script. Instead, consider using environment variables or secure configuration files to manage API keys.
   - Ensure that your server is secure and that access to the `api_proxy.php` file is restricted to prevent unauthorized use.
 
 - **🔐 HTTPS:**
