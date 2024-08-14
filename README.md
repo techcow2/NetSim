@@ -23,7 +23,9 @@ Check out the live demo of NetSim at [NetSim.xyz](https://netsim.xyz).
 
 ## 🎥 **Video Demonstration**
 
-[[![NetSim Demo Video](https://img.youtube.com/vi/UocxijcquD4/maxresdefault.jpg)](https://youtu.be/UocxijcquD4)](https://img.youtube.com/vi/UocxijcquD4/sddefault.jpg)
+<a href="https://youtu.be/UocxijcquD4">
+    <img src="https://img.youtube.com/vi/UocxijcquD4/maxresdefault.jpg" alt="NetSim Demo Video" width="400" />
+</a>
 
 ## 🛠️ **Getting Started**
 
