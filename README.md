@@ -14,7 +14,7 @@
 
 ## 🔗 **Demo**
 
-Check out the live demo of NetSim at [NetSim Demo](https://netsim.xyz).
+Check out the live demo of NetSim at [NetSim.xyz](https://netsim.xyz).
 
 ## 🎥 **Video Demonstration**
 
