@@ -339,14 +339,14 @@ Remember to generate all necessary code to create a complete, working simulation
 
             clearInputAndSetPlaceholder();
 
-            // Save history to LocalData
+            
             ldb.set('netsim_history', LZString.compressToUTF16(JSON.stringify(history)));
 
-            // Add event listener for right-click on the simulation frame
+            
             frame.contentDocument.addEventListener('contextmenu', handleRightClick);
             frame.contentDocument.addEventListener('click', handleLeftClick);
 
-            // Reset lastUserInput after saving the revision
+            
             lastUserInput = '';
         };
 
