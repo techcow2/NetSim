@@ -40,8 +40,6 @@ To run this project locally, you will need:
 
 ### Installation
 
-#### Option 1: Manual Installation
-
 1. **Clone the Repository:**
 
    Clone the repository to your local machine using Git:
@@ -110,28 +108,6 @@ To run this project locally, you will need:
 
    Open your web browser and navigate to `http://localhost:8000` (or the appropriate URL if using a different server setup) to start using NetSim.
 
-#### Option 2: Docker Installation
-
-1. **Build the Docker Image:**
-
-   Navigate to the project directory and build the Docker image:
-
-   ```bash
-   docker build -t netsim .
-   ```
-
-2. **Run the Docker Container:**
-
-   Run the Docker container with the necessary environment variables for the API keys:
-
-   ```bash
-   docker run -d -p 8088:80 -e OPENROUTER_API_KEY_1=your-actual-api-key-1 -e OPENROUTER_API_KEY_2=your-actual-api-key-2 -e PIXABAY_API_KEY=your-actual-api-key netsim
-   ```
-
-3. **Access NetSim:**
-
-   Open your web browser and navigate to `http://localhost:8088` to start using NetSim.
-
 ## 🔧 **Usage**
 
 1. **Creating Simulations:**
@@ -172,17 +148,12 @@ All data within NetSim, including your simulations, bookmarks, and history, is s
 
 ## 📝 **To-Do List**
 
-- **Fix the revision history feature:** Improve the functionality to properly track and manage different versions of simulations.
-- **Provide different examples using other models:** Create and document simulations generated using various AI models to showcase the capabilities of each model.
-- Add a public showcase for recently published apps.
+- **🔄 Fix the revision history feature:** Improve the functionality to properly track and manage different versions of simulations.
+- **🧪 Provide different examples using other models:** Create and document simulations generated using various AI models to showcase the capabilities of each model.
 
 ## 🤝 **Contributing**
 
 Contributions are welcome! If you have suggestions for new features or improvements, feel free to submit a pull request or open an issue.
-
-### **Join the Community**
-
-Share your projects, get feedback, and engage with other NetSim users on the [NetSim subreddit](https://www.reddit.com/r/NetSim/). It's a place to share projects made on [NetSim.xyz](https://netsim.xyz) and discuss ideas, issues, and enhancements.
 
 ## ☕ **Support This Project**
 
@@ -197,9 +168,3 @@ If you find NetSim helpful and would like to support its development, consider b
 ## 📄 **License**
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## 🙏 **Credits**
-
-Special thanks to the following contributors:
-
-- **u/peeDDemon_au** for providing the Dockerfile for this project.
