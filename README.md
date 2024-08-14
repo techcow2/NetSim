@@ -1,3 +1,5 @@
+Here's the updated README with the requested changes:
+
 # 🎱 **NetSim - AI Powered Simulations**
 
 ## Overview
@@ -7,6 +9,7 @@
 ## 🌟 **Features**
 
 - **🚀 Instant Web Generation:** Create interactive web applications or websites by simply entering a description.
+- **🖼️ Integrated Pixabay Images:** Automatically include high-quality images from Pixabay in your generated simulations to enhance visual appeal.
 - **🖥️ Interactive Simulated Browser:** Experience your generated web content within a simulated browser environment.
 - **✏️ Element Editing:** Modify specific elements of your simulation with easy-to-use right-click options.
 - **🔖 Bookmarking and Publishing:** Save your work with bookmarks, publish your simulations, and share them with others.
@@ -28,6 +31,7 @@ To run this project locally, you will need:
 
 - A web server capable of running PHP (e.g., Apache, Nginx).
 - An API key from [OpenRouter](https://openrouter.ai) to power the AI models used in the simulations.
+- An API key from [Pixabay](https://pixabay.com/api/docs/) for fetching images.
 - A modern web browser (Google Chrome, Firefox, etc.).
 
 ### Installation
@@ -43,7 +47,7 @@ To run this project locally, you will need:
 
 2. **Configure API Keys:**
 
-   The project requires API keys to interact with the OpenRouter API. To configure the script with your API keys:
+   The project requires API keys to interact with the OpenRouter API and Pixabay. To configure the script with your API keys:
 
    - Open the `api_proxy.php` file.
    - Replace the placeholder values `YOUR_OPENROUTER_API_KEY` with your actual API keys in the following lines:
@@ -54,6 +58,14 @@ To run this project locally, you will need:
      ```php
      $openrouter_api_key2 = 'your-actual-api-key-1';
      $openrouter_api_key = 'your-actual-api-key-2';
+     ```
+
+   - Open the `script.js` file.
+   - Replace the placeholder `'YOUR_PIXABAY_API_KEY'` in the `fetchPixabayImages` function with your actual Pixabay API key:
+
+     Example:
+     ```javascript
+     const apiKey = 'your-actual-api-key';
      ```
 
 3. **Set Up a Local Server:**
@@ -120,3 +132,32 @@ Contributions are welcome! If you have suggestions for new features or improveme
 ## 📄 **License**
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## 🌐 **Optional Instructions to Change the Website URL for Publishing**
+
+If you need to change the base URL used for publishing simulations, follow these steps:
+
+1. **Open the `api_proxy.php` file:**
+   
+   - Locate the following sections in the script:
+
+     ```php
+     'HTTP-Referer: https://YOUR_WEBSITE_HERE.com',
+     ...
+     $baseUrl = 'https://YOUR_WEBSITE_HERE.com';
+     ```
+
+2. **Replace `YOUR_WEBSITE_HERE` with your actual domain:**
+   
+   Example:
+   ```php
+   'HTTP-Referer: https://example.com',
+   ...
+   $baseUrl = 'https://example.com';
+   ```
+
+3. **Save the File:**
+
+   - Save the changes to your `api_proxy.php` file.
+
+This change will ensure that the published simulations are linked to your specified domain.
