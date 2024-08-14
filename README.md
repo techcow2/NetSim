@@ -1,3 +1,5 @@
+<img src="https://github.com/user-attachments/assets/4053266e-b5a7-4499-9b1b-185e3455fc89" alt="logo" width="200" />
+
 # 🎱 **NetSim - AI Powered Simulations**
 
 ## Overview
