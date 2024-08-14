@@ -179,11 +179,9 @@ All data within NetSim, including your simulations, bookmarks, and history, is s
 
 Contributions are welcome! If you have suggestions for new features or improvements, feel free to submit a pull request or open an issue.
 
-## 🙏 **Credits**
+### **Join the Community**
 
-Special thanks to the following contributors:
-
-- **u/peeDDemon_au** for providing the Dockerfile for this project.
+Share your projects, get feedback, and engage with other NetSim users on the [NetSim subreddit](https://www.reddit.com/r/NetSim/). It's a place to share projects made on [NetSim.xyz](https://netsim.xyz) and discuss ideas, issues, and enhancements.
 
 ## ☕ **Support This Project**
 
@@ -198,3 +196,11 @@ If you find NetSim helpful and would like to support its development, consider b
 ## 📄 **License**
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## 🙏 **Credits**
+
+Special thanks to the following contributors:
+
+- **u/peeDDemon_au** for providing the Dockerfile for this project.
+
+This addition encourages community engagement and directs users to the appropriate subreddit for sharing and discussing their NetSim projects. Let me know if you need any more changes!
