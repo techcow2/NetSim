@@ -23,7 +23,7 @@ Check out the live demo of NetSim at [NetSim.xyz](https://netsim.xyz).
 
 ## 🎥 **Video Demonstration**
 
-A video demonstration of NetSim in action will be provided soon. Stay tuned for the YouTube link to see how to create and interact with simulations in real-time.
+[[![NetSim Demo Video](https://img.youtube.com/vi/UocxijcquD4/maxresdefault.jpg)](https://youtu.be/UocxijcquD4)](https://img.youtube.com/vi/UocxijcquD4/sddefault.jpg)
 
 ## 🛠️ **Getting Started**
 
