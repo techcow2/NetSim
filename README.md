@@ -155,6 +155,17 @@ All data within NetSim, including your simulations, bookmarks, and history, is s
 
 Contributions are welcome! If you have suggestions for new features or improvements, feel free to submit a pull request or open an issue.
 
+## ☕ **Support This Project**
+
+If you find NetSim helpful and would like to support its development, consider buying me a coffee!
+
+<p align="center">
+    <a href="https://ko-fi.com/techrayappsllc" target="_blank">
+        <img src="https://cdn.ko-fi.com/cdn/kofi3.png?v=3" alt="Buy Me A Coffee" width="200" />
+    </a>
+</p>
+
+
 ## 📄 **License**
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
