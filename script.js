@@ -60,18 +60,24 @@ function initializeApp() {
         window.open(url, '_blank');
     }
 
-   
+    // Ensure the bookmarks panel hides on outside clicks
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('#bookmarks-panel') && !event.target.closest('.btn[onclick="toggleBookmarks()"]')) {
+            hideBookmarks();
+        }
+    });
+
     ldb.get('netsim_history', function(value) {
         history = JSON.parse(LZString.decompressFromUTF16(value) || '[]');
     });
 
-   
     const frame = document.getElementById('simulation-frame');
     if (frame && frame.contentDocument) {
         frame.contentDocument.addEventListener('contextmenu', handleRightClick);
         frame.contentDocument.addEventListener('click', handleLeftClick);
     }
 }
+
 
 function showLoadingOverlay() {
     const content = document.getElementById('content');
@@ -173,8 +179,8 @@ Key requirements:
 
 20. There is no limit to the creativity, the type of code used, or the libraries used to produce the code for the generated simulations. The results should always aim to be of the highest quality, never aiming for simple generations but rather highly interactive, fully working, and complete generations.
 21. Use only the provided Pixabay images for static content. Each image object contains a 'url' and 'alt' property. Use these properties to add relevant images to the generated content.
-22 For interactive elements or custom visuals that require specific designs (like game elements, custom UI components, etc.), create these using code (SVG, Canvas, WebGL) or appropriate libraries rather than relying on static images.
-23 Do not use placeholder comments. Always generate the full, working code.
+22. For interactive elements or custom visuals that require specific designs (like game elements, custom UI components, etc.), create these using code (SVG, Canvas, WebGL) or appropriate libraries rather than relying on static images.
+23. Do not use placeholder comments. Always generate the full, working code.
 
 Your primary objective is to create a fully functional, creative, visually appealing, and highly detailed web application or website that matches the user's description. Pay meticulous attention to both the visual design and the underlying functionality. The result should be a rich, engaging, and realistic web experience that could pass for a genuine, professionally developed web application. Never be afraid to add your own creative additions to the simulation. It's critical that every single generation is full of content, is interactive and has a rich, immersive UI.
 
