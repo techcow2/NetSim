@@ -21,23 +21,6 @@ const loadingTexts = [
     "Untangling the world wide web..."
 ];
 
-function checkRateLimit(action, limit, timeFrame) {
-    const now = Date.now();
-    const actionKey = `rateLimit_${action}`;
-    const storedData = JSON.parse(sessionStorage.getItem(actionKey) || '[]');
-    
-    
-    const validData = storedData.filter(timestamp => now - timestamp < timeFrame);
-    
-    if (validData.length >= limit) {
-        return false; 
-    }
-    
-    
-    validData.push(now);
-    sessionStorage.setItem(actionKey, JSON.stringify(validData));
-    return true; 
-}
 function clearInputAndSetPlaceholder() {
     document.getElementById('addressbar').value = '';
     document.getElementById('addressbar').placeholder = "Enter text here to update or make changes to your project";
@@ -153,11 +136,6 @@ async function handleAddressBarSubmit() {
 }
 
 async function loadPage(input) {
-    if (!checkRateLimit('loadPage', 10, 60000)) { 
-        alert("You've made too many requests. Please wait a moment before trying again.");
-        return;
-    }
-
     showLoadingOverlay();
     updateStatusBar("Creating web application...");
 
