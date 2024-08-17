@@ -113,7 +113,7 @@ To run this project locally, you will need:
 1. **Creating Simulations:**
 
    - Enter a description of the web application or website you want to create in the address bar.
-   - Press "Create" or hit Enter to generate your simulation.
+   - Press "Create" or hit Enter to gene your simulation.
 
 2. **Editing Simulations:**
 
@@ -122,7 +122,7 @@ To run this project locally, you will need:
 3. **Saving and Publishing:**
 
    - Bookmark your simulations for later access.
-   - Publish simulations to generate a shareable link.
+   - Publish simulations to gene a shareable link.
 
 4. **Model Selection:**
 
@@ -143,8 +143,8 @@ All data within NetSim, including your simulations, bookmarks, and history, is s
 - **🔐 HTTPS:**
   - Use HTTPS to encrypt all data transmitted between the client and server, including API keys and other sensitive information.
 
-- **⏱️ Rate Limiting:**
-  - The script includes a rate limiting function to prevent abuse. Ensure that this is configured correctly to protect your resources.
+- ~~**⏱️ Rate Limiting:**~~
+  - ~~The script includes a rate limiting function to prevent abuse. Ensure that this is configured correctly to protect your resources.~~
 
 ## 📝 **To-Do List**
 
