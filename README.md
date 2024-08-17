@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://github.com/user-attachments/assets/63876c1a-b72d-4847-bcb9-f70c4a5f19f4" alt="logo" width="200" />
+    <img src="https://github.com/user-attachments/assets/63876c1a-b72d-4847-bcb9-f70c4a5f19f4" alt="logo" width="300" />
 </p>
 
 # 🎱 **NetSim - AI Powered Simulations**
