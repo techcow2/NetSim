@@ -37,6 +37,7 @@ To run this project locally, you will need:
 - An API key from [OpenRouter](https://openrouter.ai) to power the AI models used in the simulations.
 - An API key from [Pixabay](https://pixabay.com/api/docs/) for fetching images.
 - A modern web browser (Google Chrome, Firefox, etc.).
+- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/).
 
 ### Installation
 
@@ -94,19 +95,22 @@ To run this project locally, you will need:
    - **Save the Files:**
      - Save the changes to your `api_proxy.php` and `script.js` files.
 
-3. **Set Up a Local Server:**
+3. **Set Up with Docker:**
 
-   If you're using PHP's built-in server, navigate to the project directory and run:
+   If you prefer to use Docker for running the project:
+
+   - **Ensure Docker and Docker Compose are installed on your machine.**
+   - **Build and run the application using Docker Compose:**
 
    ```bash
-   php -S localhost:8000
+   docker-compose up --build
    ```
 
-   Alternatively, configure your preferred web server (Apache, Nginx) to serve the project directory.
+   This will start the application on port `8080`. You can access it by navigating to `http://localhost:8080` in your web browser.
 
 4. **Access NetSim:**
 
-   Open your web browser and navigate to `http://localhost:8000` (or the appropriate URL if using a different server setup) to start using NetSim.
+   Open your web browser and navigate to `http://localhost:8080` (or the appropriate URL if using a different server setup) to start using NetSim.
 
 ## 🔧 **Usage**
 
@@ -142,9 +146,6 @@ All data within NetSim, including your simulations, bookmarks, and history, is s
 
 - **🔐 HTTPS:**
   - Use HTTPS to encrypt all data transmitted between the client and server, including API keys and other sensitive information.
-
-- ~~**⏱️ Rate Limiting:**~~
-  - ~~The script includes a rate limiting function to prevent abuse. Ensure that this is configured correctly to protect your resources.~~
 
 ## 📝 **To-Do List**
 
