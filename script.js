@@ -77,18 +77,24 @@ function initializeApp() {
         window.open(url, '_blank');
     }
 
-   
+    // Ensure the bookmarks panel hides on outside clicks
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('#bookmarks-panel') && !event.target.closest('.btn[onclick="toggleBookmarks()"]')) {
+            hideBookmarks();
+        }
+    });
+
     ldb.get('netsim_history', function(value) {
         history = JSON.parse(LZString.decompressFromUTF16(value) || '[]');
     });
 
-   
     const frame = document.getElementById('simulation-frame');
     if (frame && frame.contentDocument) {
         frame.contentDocument.addEventListener('contextmenu', handleRightClick);
         frame.contentDocument.addEventListener('click', handleLeftClick);
     }
 }
+
 
 function showLoadingOverlay() {
     const content = document.getElementById('content');
@@ -113,19 +119,28 @@ function startLoadingTextAnimation() {
 }
 
 function updateStatusBar(message) {
+    const maxLength = 50; // Adjust this based on your design needs
+    if (message.length > maxLength) {
+        message = message.substring(0, maxLength) + '...';
+    }
     document.getElementById('status-message').textContent = message;
 }
 
 function updatePageTitle(title) {
+    const maxLength = 20;
+    if (title.length > maxLength) {
+        title = title.substring(0, maxLength) + '...';
+    }
     document.getElementById('page-title').textContent = title;
 }
+
 
 function updateAddressBar(text) {
     document.getElementById('addressbar').value = text;
 }
 
 async function fetchPixabayImages(query, count = 5) {
-    const apiKey = 'YOUR_PIXABAY_API_KEY';
+    const apiKey = 'YOUR_PIXABAY_API';
     const url = `https://pixabay.com/api/?key=${apiKey}&q=${encodeURIComponent(query)}&per_page=${count}&image_type=vector,illustration`;
 
     try {
@@ -820,7 +835,7 @@ async function improvePrompt() {
                     content: `You are an AI assistant specializing in refining natural language prompts for users of a web simulation generation application. Your primary task is to enhance the given prompt by making it clearer, removing any ambiguities, and optimizing it for generating high-quality, immersive, and visually rich user interfaces.'
 
 Key points to consider:
-1. Keep the improved prompt between 3 and 5 sentences.
+1. Keep the improved prompt no longer than 3 sentences.
 2. Focus on the most important features and elements that will make the simulation impressive and functional.
 3. Use specific, descriptive language to convey a lot of information in few words.
 4. Prioritize elements that will result in an engaging user interface and experience.
