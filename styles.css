@@ -645,3 +645,40 @@ body, html {
     border: 2px solid #2b2d42;
     box-shadow: 0 0 10px #00ff00;
 }
+#revisions-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: none;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.revision-item {
+    display: flex;
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.revision-item:hover {
+    background-color: #f5f5f5;
+}
+
+.revision-screenshot {
+    width: 150px;
+    height: 90px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.revision-prompt {
+    flex-grow: 1;
+    font-size: 14px;
+}
