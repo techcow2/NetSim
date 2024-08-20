@@ -1,7 +1,4 @@
 <?php
-
-
-
 $openrouter_api_key2 = 'YOUR_OPENROUTER_API_KEY';
 $openrouter_api_key = 'YOUR_OPENROUTER_API_KEY';
 
