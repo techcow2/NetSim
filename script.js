@@ -1011,46 +1011,6 @@ window.onload = function() {
         e.preventDefault(); 
         
     };
-function toggleRevisions() {
-    const revisionsPanel = document.getElementById('revisions-panel');
-    if (revisionsPanel.style.display === 'block') {
-        revisionsPanel.style.display = 'none';
-    } else {
-        displayRevisions();
-        revisionsPanel.style.display = 'block';
-    }
-}
-
-function displayRevisions() {
-    const revisionsPanel = document.getElementById('revisions-panel');
-    revisionsPanel.innerHTML = ''; // Clear the panel
-
-    history.forEach((revision, index) => {
-        const revisionItem = document.createElement('div');
-        revisionItem.className = 'revision-item';
-        revisionItem.innerHTML = `
-            <img src="${revision.screenshot}" alt="Revision ${index}" class="revision-screenshot">
-            <div class="revision-prompt">${revision.input}</div>
-        `;
-        revisionItem.addEventListener('click', () => restoreRevision(index));
-        revisionsPanel.appendChild(revisionItem);
-    });
-}
-
-function restoreRevision(index) {
-    const revision = history[index];
-    currentSimulation = revision.simulation;
-    const frame = document.getElementById('simulation-frame');
-    frame.contentDocument.open();
-    frame.contentDocument.write(currentSimulation);
-    frame.contentDocument.close();
-
-    // Hide the revisions panel after restoring
-    document.getElementById('revisions-panel').style.display = 'none';
-
-    updateAddressBar(revision.input);
-    updatePageTitle(`NetSim: ${revision.input}`);
-}
 
     
     document.getElementById('maximize-button').onclick = function() {
