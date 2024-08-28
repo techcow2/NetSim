@@ -27,7 +27,6 @@ To run this project locally, you will need:
 - An API key from [OpenRouter](https://openrouter.ai) to power the AI models used in the simulations.
 - An API key from [Pixabay](https://pixabay.com/api/docs/) for fetching images.
 - A modern web browser (Google Chrome, Firefox, etc.).
-- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/).
 
 ### Installation
 
