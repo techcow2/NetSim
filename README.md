@@ -85,6 +85,7 @@ To run this project locally, you will need:
      - Save the changes to your `api_proxy.php` and `script.js` files.
 
 
+
 ## 🔧 **Usage**
 
 ![Screenshot 2024-08-28 185847](https://github.com/user-attachments/assets/596afedb-fcdf-47e3-9b5a-65c06d940c34)
