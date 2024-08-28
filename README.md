@@ -85,24 +85,15 @@ To run this project locally, you will need:
    - **Save the Files:**
      - Save the changes to your `api_proxy.php` and `script.js` files.
 
-3. **Set Up with Docker:**
-
-   If you prefer to use Docker for running the project:
-
-   - **Ensure Docker and Docker Compose are installed on your machine.**
-   - **Build and run the application using Docker Compose:**
-
-   ```bash
-   docker-compose up --build
-   ```
-
-   This will start the application on port `8080`. You can access it by navigating to `http://localhost:8080` in your web browser.
 
 4. **Access NetSim:**
 
    Open your web browser and navigate to `http://localhost:8080` (or the appropriate URL if using a different server setup) to start using NetSim.
 
 ## 🔧 **Usage**
+
+![Screenshot 2024-08-28 185847](https://github.com/user-attachments/assets/596afedb-fcdf-47e3-9b5a-65c06d940c34)
+
 
 1. **Creating Simulations:**
 
