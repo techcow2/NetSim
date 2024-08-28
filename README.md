@@ -17,10 +17,6 @@
 - **🔖 Bookmarking and Publishing:** Save your work with bookmarks, publish your simulations, and share them with others.
 - **🔄 Model Selection:** Choose from different AI models to tailor the generation process to your needs.
 
-## 🔗 **Demo**
-
-Check out the live demo of NetSim at [NetSim.xyz](https://netsim.xyz).
-
 ## 🛠️ **Getting Started**
 
 ### Prerequisites
