@@ -35,7 +35,7 @@ To run this project locally, you will need:
    Clone the repository to your local machine using Git:
 
    ```bash
-   git clone https://github.com/yourusername/netsim.git
+   git clone https://github.com/techcow2/netsim.git
    cd netsim
    ```
 
